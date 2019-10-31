@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: linear-gradient(#0094ff, #fff) no-repeat;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    width: 220px;
+}
+
+ol li {
+    list-style-type: none;
+}
+
+
+.joolie_logo {
+    width: 50%;
+    height: auto;
+}
+
+.joolie_text {
+    font-size: 250%;
+}
+
+.signup {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    border: none;
+    background: transparent;
+    font-size: 200%;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 5px;
+}
+
+.signup:hover {
+    border-radius: 5px;
+    background: #ffffff;
+    color: #0094ff;
+    text-decoration: none;
+}
+
+.login_label {
+    font-size: 140%;
+}
+
+.login_btn {
+    margin-top: 10px;
+    padding: 3px 4px;
+    background: #0094ff;
+    font-size: 180%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    vertical-align: middle;
+}
+
+    .login_btn:hover {
+        background: #a8bdf1;
+    }
+
+.input_image{
+    border:none;
+    margin-bottom: 10px;
+}
+

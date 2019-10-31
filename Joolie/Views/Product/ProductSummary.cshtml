@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "ProductSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .summary {
+        background-color: white;
+        padding: 10px;
+        margin-left: 0px;
+        margin-right: 90px;
+    }
+    .summary th[scope=row] {
+        background-color: lightgrey;
+    }
+    .summary th, td {
+        padding: 10px;
+        border: 1px solid #b9b9b9;
+    }
+    .summary img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .category {
+        font-size: large;
+    }
+</style>
+<h2>Joole</h2>
+<h3>Product Summary</h3>
+
+@{
+    Newtonsoft.Json.Linq.JObject obj = (Newtonsoft.Json.Linq.JObject)ViewData["products"];
+}
+<table class="summary col-xs-5">
+    <tbody>
+        @foreach (var prop in obj)
+        {
+            if (prop.Key.Equals("TECHNICAL SPECIFICATIONS"))
+            {
+                continue;
+            }
+            <tr>
+                <th colspan="2">@prop.Key</th>
+            </tr>
+            foreach (Newtonsoft.Json.Linq.JProperty prop2 in @prop.Value)
+            {
+                <tr>
+                    <th scope="row" class="col-xs-2">
+                        @prop2.Name
+                    </th>
+                    @foreach (var item in @prop2.Value)
+                    {
+                        <td class="col-xs-3">
+                            @item
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<table class="summary col-xs-5">
+    <tbody>
+        @{
+            obj = (Newtonsoft.Json.Linq.JObject)ViewData["products"];
+        }
+        @foreach (var prop in obj)
+        {
+            if (prop.Key.CompareTo("TECHNICAL SPECIFICATIONS") != 0)
+            {
+                continue;
+            }
+            <tr>
+                <th colspan="2">@prop.Key</th>
+            </tr>
+            foreach (Newtonsoft.Json.Linq.JProperty prop2 in @prop.Value)
+            {
+                <tr>
+                    <th scope="row" class="col-xs-2">
+                        @prop2.Name
+                    </th>
+                    @foreach (var item in @prop2.Value)
+                    {
+                        <td class="col-xs-3">
+                            @item
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

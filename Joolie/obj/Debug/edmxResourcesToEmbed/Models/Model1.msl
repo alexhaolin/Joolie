@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JOOLIEModelStoreContainer" CdmEntityContainer="JoolieDB">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="JOOLIEModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="JOOLIEModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Credentials">
+      <EntityTypeMapping TypeName="JOOLIEModel.Credential">
+        <MappingFragment StoreEntitySet="Credential">
+          <ScalarProperty Name="CredentialID" ColumnName="CredentialID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="JOOLIEModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerWeb" ColumnName="ManufacturerWeb" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="JOOLIEModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Model_Year" ColumnName="Model_Year" />
+          <ScalarProperty Name="Series_Info" ColumnName="Series_Info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="JOOLIEModel.Property">
+        <MappingFragment StoreEntitySet="Property">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="IsType" ColumnName="IsType" />
+          <ScalarProperty Name="IsTechSpec" ColumnName="IsTechSpec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValues">
+      <EntityTypeMapping TypeName="JOOLIEModel.PropertyValue">
+        <MappingFragment StoreEntitySet="PropertyValue">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Searches">
+      <EntityTypeMapping TypeName="JOOLIEModel.Search">
+        <MappingFragment StoreEntitySet="Searches">
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="JOOLIEModel.SubCategory">
+        <MappingFragment StoreEntitySet="SubCategory">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="subCategory1" ColumnName="subCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechSpecFilters">
+      <EntityTypeMapping TypeName="JOOLIEModel.TechSpecFilter">
+        <MappingFragment StoreEntitySet="TechSpecFilter">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="Min_Value" ColumnName="Min_Value" />
+          <ScalarProperty Name="Max_Value" ColumnName="Max_Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeFilters">
+      <EntityTypeMapping TypeName="JOOLIEModel.TypeFilter">
+        <MappingFragment StoreEntitySet="TypeFilter">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeOptions" ColumnName="TypeOptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="JOOLIEModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="CredentialID" ColumnName="CredentialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategorySubCategories">
+      <EntityTypeMapping TypeName="JOOLIEModel.tblCategorySubCategory">
+        <MappingFragment StoreEntitySet="tblCategorySubCategory">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Search_Delete" FunctionName="JOOLIEModel.Store.Search_Delete" />
+    <FunctionImportMapping FunctionImportName="Search_Insert" FunctionName="JOOLIEModel.Store.Search_Insert" />
+    <FunctionImportMapping FunctionImportName="Search_Update" FunctionName="JOOLIEModel.Store.Search_Update" />
+    <FunctionImportMapping FunctionImportName="SearchPage" FunctionName="JOOLIEModel.Store.SearchPage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JOOLIEModel.SearchPage_Result">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGeSubCategoryID_Products" FunctionName="JOOLIEModel.Store.spGeSubCategoryID_Products" />
+    <FunctionImportMapping FunctionImportName="spGetCategoryAndSubcategory" FunctionName="JOOLIEModel.Store.spGetCategoryAndSubcategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JOOLIEModel.spGetCategoryAndSubcategory_Result">
+          <ScalarProperty Name="subCategory" ColumnName="subCategory" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetComparedProductsDetails" FunctionName="JOOLIEModel.Store.spGetComparedProductsDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JOOLIEModel.spGetComparedProductsDetails_Result">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="IsType" ColumnName="IsType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetManufacturereAndImage" FunctionName="JOOLIEModel.Store.spGetManufacturereAndImage">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JOOLIEModel.spGetManufacturereAndImage_Result">
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Model_Year" ColumnName="Model_Year" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetPropertyIDByName_Property" FunctionName="JOOLIEModel.Store.spGetPropertyIDByName_Property" />
+    <FunctionImportMapping FunctionImportName="spGetPropertyMax_TechSpecFilter" FunctionName="JOOLIEModel.Store.spGetPropertyMax_TechSpecFilter" />
+    <FunctionImportMapping FunctionImportName="spGetPropertyMin_TechSpecFilter" FunctionName="JOOLIEModel.Store.spGetPropertyMin_TechSpecFilter" />
+    <FunctionImportMapping FunctionImportName="spGetSubCategoryID_Products" FunctionName="JOOLIEModel.Store.spGetSubCategoryID_Products" />
+  </EntityContainerMapping>
+</Mapping>

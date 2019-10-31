@@ -1,0 +1,106 @@
+﻿
+@using Joolie.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<style type="text/css">
+    .CategoryForm .chosen-container-single .chosen-single span { /* Make top Category blue */                                                                  
+        border-radius: 5px;
+        background-color: #1252e4;
+        color: aliceblue
+    }
+</style>
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/Search.css"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+
+
+
+<body>
+
+    <div style="background-image: linear-gradient(#1252e4, white); height:600px">
+        <center>
+            <div class="joolie_logo_search">
+                <img src="~/Content/Image/Joole_logo.png" alt="Joolie Logo" />
+            </div>
+            <div class="joolie_text_search">
+                <p>
+                    Building Product Selection Platform
+                </p>
+            </div>
+        </center>
+        <center style="position:absolute; left:30%; top:60%">
+            <div style="display: inline-block;">
+                <form action="ChangeCategory" method="POST" class="CategoryForm">
+                    <select id="Category" name="Category" onchange="this.form.submit()" style="width:150px">
+                        @{
+                            if (ViewData["selectedCategory"] != null)
+                            {
+                                <option style="font-weight:bold;font-size:15px;">@ViewData["selectedCategory"]</option>
+                            }
+                            else
+                            {
+                                <option id="BlankOption">Category</option>
+                            }
+
+                        }
+
+                        <option value="All Categories" id="All">All Categories</option>
+                        @{
+
+
+                            List<string> CategoryList = new List<string>();
+                            foreach (Search1 s in Model.Categories)  //
+                            {
+                                if (CategoryList.IndexOf(s.Category) == -1)
+                                {
+                                    <option value="@s.Category" class="CategoryOption">@s.Category</option>
+                                    CategoryList.Add(s.Category);
+                                }
+
+                            }
+                        }
+                    </select>
+                </form>
+            </div>
+            <div style="display: inline-block">
+                <form action="SelectSubCategory" method="POST">
+                    <select id="SubCategoryList" name="SubCategory" style="width:250px;" onchange="">
+                        @{
+                            if (ViewData["selectedCategory"] == null)
+                            {
+                                <option id="">SubCategory</option>
+                            }
+
+                            foreach (Search1 s in Model.Categories)
+                            {
+                                <option name="@s.SubCategory" value="@s.SubCategory">@s.SubCategory</option>
+                            }
+                        }
+                    </select>
+                    <button type="submit" onclick="this.form.submit()" style="background-color:#1252e4"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>
+
+
+<script>
+    $('#Category').chosen();
+
+    $('#SubCategoryList').chosen();
+</script>

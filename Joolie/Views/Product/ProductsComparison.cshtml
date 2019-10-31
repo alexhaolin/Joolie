@@ -1,0 +1,82 @@
+﻿@*@model  IEnumerable<DomainRepository.Entities.Product>*@
+@*@model string*@
+@{
+    ViewBag.Title = "Products Comparison";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .compare {
+        background-color: white;
+        padding: 10px;
+    }
+    .compare th[scope=row] {
+        background-color: lightgrey;
+    }
+    .compare th, td {
+        padding: 10px;
+        border: 1px solid #b9b9b9;
+    }
+    .compare img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .category{
+        font-size:large;
+    }
+</style>
+<h2>Joole</h2>
+<br />
+
+<div class="category">
+    @Html.ActionLink(ViewData["Category"].ToString(), "ProductSummary")
+    <span> > </span>
+    @Html.ActionLink(ViewData["SubCategory"].ToString(), "ProductSummary")
+    <span> > </span>
+    <span>Compare</span>
+</div>
+<br />
+<table class="compare col-sm-12">
+    <tbody>
+        @{
+            Newtonsoft.Json.Linq.JObject obj = (Newtonsoft.Json.Linq.JObject)ViewData["products"];
+            int[] ProductIDs = (int[])ViewData["ProductIDs"];
+        }
+        @foreach (var prop in obj)
+        {
+            <tr>
+                <th colspan="5">@prop.Key</th>
+            </tr>
+            foreach (Newtonsoft.Json.Linq.JProperty prop2 in @prop.Value)
+            {
+                <tr>
+                    <th scope="row" class="col-xs-2">
+                        @prop2.Name
+                    </th>
+                    @{
+                        var index = 0;
+                    }
+                    @foreach (var item in @prop2.Value)
+                    {
+                        if (prop2.Name == "Image")
+                        {
+                            <td class="col-xs-2">
+                                <a href="@Url.Action("ProductSummary", "Product", new {ProductID = ProductIDs[index++]})" title="Profile" class="links">
+                                    <img alt="Profile Image" src="@item">
+                                </a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="col-xs-2">
+                                @item
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+

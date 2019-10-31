@@ -1,0 +1,330 @@
+﻿@*@using DomainRepository.Entities.Product*@
+@*@model  IEnumerable<DomainRepository.Entities.Product>*@
+@model Joolie.ViewModels.ProductListViewModel
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="background-color:white">
+    <div class="row">
+        @Html.Action("SearchPage", "Shared")
+        @*modal for looking up fans*@
+        @*<button class="btn btn-light btn-lg " type="button" data-toggle="modal" data-target="#myModal">Search</button>*@
+
+
+
+        <div class="accordion md-accordion accordion-3 z-depth-1-half col-xs-3" id="accordionEx194" role="tablist"
+             aria-multiselectable="true">
+
+            @using (Html.BeginForm("List", "Product", FormMethod.Post))
+            {
+                @Html.HiddenFor(p => p.fanproperties.ModelYearPropertID)
+                @Html.HiddenFor(p => p.fanproperties.AirFlowPropertID)
+                @Html.HiddenFor(p => p.fanproperties.MaxPowerPropertyID)
+                @Html.HiddenFor(p => p.fanproperties.FanSpeedDimaterPropertyID)
+                @Html.HiddenFor(p => p.fanproperties.HeightPropertyID)
+                @Html.HiddenFor(p => p.fanproperties.FirmPropertyID)
+                @Html.HiddenFor(p => p.fanproperties.GlobalPropertyID)
+                @Html.HiddenFor(p => p.CategoryId)
+                @Html.HiddenFor(p => p.Category)
+                @Html.HiddenFor(p => p.SubCategoryID)
+                @Html.HiddenFor(p => p.SubCategory)
+
+                <div class="card">
+                    <div class="card-header" role="tab">
+                        <div class="nav-tab text-center p-lg-2">
+
+                            <label class="control-label mr-lg-2 ">Search:</label>
+                            <button id="Saves" type="submit" value="Submit" class="btn btn-secondary btn-lg">Save </button>
+                            <button type="button" id="clear" class="btn btn-secondary btn-lg">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab">
+                        <div class="tiles btn-group-lg">
+                            <a class=" button blue col-lg-6" role="button">
+                                Product
+                            </a>
+                            <a class=" button light col-lg-6" role="button">
+                                Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="card-header" role="tab" id=" ProductType">
+                        <a class="anchorCollapse collapsed in" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
+                           aria-controls="collapse4">
+                            <h4 class="mb-0 mt-3 black-text producttype">
+                                Product Type <i id="Producttype" class="fa fa-caret-down pull-right" style="font-size:24px"></i>
+                                @*<i class="fas fa-angle-down rotate-icon fa-2x"></i>*@
+                            </h4>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="ProductType"
+                         data-parent="#accordionEx194">
+                        <div class="card-body p-3">
+
+                            <div class="form-group ">
+                                @Html.Label("Model", new { @class = "label-control col-lg-4 pull-left pt-lg-2" })
+                                @*@Html.TextBox("minYear", null, new { @class = "form-control col-lg-3 pull-right mb-lg-3 mr-lg-3" })*@
+                                @Html.TextBoxFor(p => p.fanproperties.MaxModelYear, new { @class = "form-control col-lg-3 pull-right mb-lg-3 mr-lg-3" })
+                                <span class="pull-right mb-lg-3 pt-lg-2">--</span>
+                                @Html.TextBoxFor(p => p.fanproperties.MinModelYear, new { @class = "form-control col-lg-3 pull-right mb-lg-3 ml-lg-3" })
+
+
+
+                            </div>
+
+
+
+                            <!-- Card header -->
+
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="accordion lg-accordion accordion-12 z-depth-1-half col-xs-12" id="accordionEx194a" role="tablist"
+                                 aria-multiselectable="true">
+
+                                <div class="card-header" role="tab" id=" TechnicalSpecifications">
+                                    <a class="anchorCollapse collapsed " data-toggle="collapse" data-parent="#accordionEx194a" href="#BodyTechnicalSpecifications"
+                                       aria-expanded="false" aria-controls="BodyTechnicalSpecifications">
+                                        <h4 class="mb-0 mt-3 red-text techSpecifications">
+                                            Technical Specifications @*<i class="fas fa-angle-down rotate-icon fa-2x"></i>*@
+                                            <i id="TechSpecifications" class="fa fa-caret-down pull-right" style="font-size:24px"></i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="BodyTechnicalSpecifications" class="collapse show" role="tabpanel" aria-labelledby="TechnicalSpecifications"
+                                     data-parent="#accordionEx194a">
+                                    <div class="card-body p-3">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                            <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+
+                                            @Html.Label("AirFlow", new { @class = "p-lg-2" })
+                                        </div>
+                                        <div>
+                                            @*@Html.TextBox("MinAirFLow", null, new { @style = "width:40px;height:15px " })*@
+                                            @Html.TextBoxFor(p => p.fanproperties.MinAirFlow, null, new { @style = "width:40px;height:15px " })
+                                            <span id="AirFlowSlider">
+
+                                            </span>
+                                            @*@Html.TextBox("MaxAirFLow", null, new { @style = "width:40px;height:15px;" })*@
+                                            @Html.TextBoxFor(p => p.fanproperties.MaxAirFlow, null, new { @style = "width:40px;height:15px " })
+                                        </div>
+                                        @*Maxpower control*@
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                            <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                            @*@Html.Label("Max Power (W)", new { @class = "p-lg-2" })*@
+                                            @Html.Label("MaxPower", new { @class = "p-lg-2" })
+
+                                        </div>
+                                        <div>
+                                            @*@Html.TextBox("MinMaxPower", null, new { @style = "width:40px;height:15px " })*@
+                                            @Html.TextBoxFor(p => p.fanproperties.MinMaxPower, null, new { @style = "width:40px;height:15px " })
+                                            <span id="MaxPowerSlider">
+
+                                            </span>
+                                            @Html.TextBoxFor(p => p.fanproperties.MaxMaxPower, null, new { @style = "width:40px;height:15px " })
+                                        </div>
+                                        @*end of max poser control*@
+                                        @*Fan sweep diameter control*@
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                            <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                            @*@Html.Label("Fan Sweep diameter (in)", new { @class = "p-lg-2" })*@
+                                            @Html.Label("FanSweepDiameter", new { @class = "p-lg-2" })
+
+                                        </div>
+                                        <div>
+                                            @Html.TextBoxFor(p => p.fanproperties.MinFanSpeedDimater, null, new { @style = "width:40px;height:15px " })
+                                            <span id="FanSweepdiameterSlider">
+
+                                            </span>
+                                            @Html.TextBoxFor(p => p.fanproperties.MaxFanSpeedDimater, null, new { @style = "width:40px;height:15px " })
+                                        </div>
+                                        @*end of Fan sweep diameter control*@
+
+                                        @*height (in) control*@
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                            <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                            @*@Html.Label("Height (in)", new { @class = "p-lg-2" })*@
+                                            @*@Html.Label(Model.PropertyNames["Height"].ToString(), new { @class = "p-lg-2" })*@
+                                            @Html.Label("Height", new { @class = "p-lg-2" })
+
+
+                                        </div>
+                                        <div>
+                                            @Html.TextBoxFor(p => p.fanproperties.MinHeight, null, new { @style = "width:40px;height:15px " })
+                                            <span id="HeightSlider">
+
+                                            </span>
+                                            @Html.TextBoxFor(p => p.fanproperties.MaxHeight, null, new { @style = "width:40px;height:15px " })
+                                        </div>
+                                        @*end of height control*@
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="heading5">
+                        <a class="anchorCollapse collapsed " data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5"
+                           aria-expanded="false" aria-controls="collapse5">
+                            <h4 class="mb-0 mt-3 red-text brandIcon">
+                                Brand @*<i class="fas fa-angle-down rotate-icon fa-2x"></i>*@
+                                <i id="BrandIcon" class="fa fa-caret-down pull-right" style="font-size:24px"></i>
+                            </h4>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapse5" class="collapse show " role="tabpanel" aria-labelledby="heading5"
+                         data-parent="#accordionEx194">
+                        <div class="card-body pt-0">
+                            <p>
+                                No brand to show Now
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="heading6">
+                        <a class="collapsed anchorCollapse" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse6"
+                           aria-expanded="false" aria-controls="collapse6">
+                            <h4 class="mb-0 mt-3 red-text pastSelect">
+                                Past Selections @*<i class="fas fa-angle-down rotate-icon fa-2x"></i>*@
+                                <i id="PastSelect " class="fa fa-caret-down pull-right" style="font-size:24px"></i>
+
+                            </h4>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapse6" class="collapse show" role="tabpanel" aria-labelledby="heading6"
+                         data-parent="#accordionEx194">
+                        <div class="card-body pt-0">
+                            @*Firm (in) control*@
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                @*@Html.Label("Firm", new { @class = "p-lg-2" })*@
+                                @Html.Label("Firm", new { @class = "p-lg-2" })
+
+                            </div>
+                            <div>
+                                @Html.TextBoxFor(p => p.fanproperties.MinFirm, null, new { @style = "width:40px;height:15px " })
+                                <span id="FirmSlider">
+
+                                </span>
+                                @Html.TextBoxFor(p => p.fanproperties.MaxFirm, null, new { @style = "width:40px;height:15px;" })
+                            </div>
+                            @*end of Firm control*@
+                            @*Global (in) control*@
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btnAirflowUP btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                                <button type="button" class="btn btn-light btn-sm"><i class="glyphicon glyphicon-arrow-down"></i></button>
+                                @*@Html.Label("Global", new { @class = "p-lg-2" })*@
+                                @Html.Label("Global", new { @class = "p-lg-2" })
+
+                            </div>
+                            <div>
+                                @Html.TextBoxFor(p => p.fanproperties.MinGlobal, null, new { @style = "width:40px;height:15px " })
+                                <span id="GlobalSlider">
+
+                                </span>
+                                @Html.TextBoxFor(p => p.fanproperties.MaxGlobal, null, new { @style = "width:40px;height:15px;" })
+                            </div>
+                            @*end of Firm control*@
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- Accordion card -->
+
+
+        </div>
+        <div class="cardsDiv col-xs-9">
+            @using (@Html.BeginForm("ProductsComparison", "Product", FormMethod.Post))
+            {
+                <div class="Cards col-xs-12">
+                    <div id="Cards-Header">
+                        <div>
+                            @Html.DisplayFor(p => p.Category, new { @class = " color: Highlight; font-weight: bold; font-size: small" })
+                            <span>></span>
+                            @Html.DisplayFor(p => p.SubCategory)
+                        </div>
+                        <input type="submit" value="Compare" class="btn-sm btn-sm  btn-primary pull-right compare" />
+                    </div>
+                    <div id="products">
+
+
+                        @foreach (var model in Model.Products)
+                        {
+
+                            <div class="card mb-lg-2 mr-lg-2 Card col-xs-12 col-md-6 col-lg-4 col-lg-4 " style="max-width:200px;">
+                                <img class="card-img-top img-responsive" src="~/Images/Products/Fans/Haiku.jpg" alt="Card image cap">
+                                <h4 class="card-title text-center">@Html.Label(model.ProductName)</h4>
+                                <div class="card-body">
+                                    <p class="card-text text-center">@Html.Label(model.ProductName)</p>
+                                    <p class="card-text text-center">@Html.Label(model.Model)</p>
+                                    <p class="card-text text-center">@Html.Label(model.Series)</p>
+                                    <p class="card-text text-center">@Html.Label(model.Series_info)</p>
+                                    @Html.CheckBox("ProductCheckbox", false, new { name = model.ProductName, value = model.ProductID })
+                                    <div class="btn-group pull-right">
+                                        <button class="btn btn-primary pr-lg-1 ">Add to <span class="caret"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

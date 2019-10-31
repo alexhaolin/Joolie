@@ -1,0 +1,168 @@
+﻿
+@model Joolie.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<center>
+    <div class="joolie_logo_search">
+        <img src="~/Content/Image/Joole_logo.png" alt="Joolie Logo" />
+    </div>
+    <div class="joolie_text_search">
+        <p>
+            Building Product Selection Platform
+        </p>
+    </div>
+</center>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Login failed. Check your login details.");
+    <div>
+
+        <a class="signup popup-with-form" onclick="SignUp()">Sign Up</a>
+
+        <fieldset>
+            <div class="login_label">
+                @Html.LabelFor(u => u.UserName)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.UserName)
+                @Html.ValidationMessageFor(u => u.UserName)
+            </div>
+
+            <div class="login_label">
+                @Html.LabelFor(u => u.Password)
+            </div>
+
+            <div class="editor-field login_label">
+                @Html.PasswordFor(u => u.Password)
+                @Html.ValidationMessageFor(u => u.Password)
+            </div>
+
+            <input class="login_btn" type="submit" value="Log in" />
+        </fieldset>
+
+
+    </div>
+}
+
+<div class="modal fade" id="ShowModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">  &times;</a>
+                <h3><strong>Registeration Form</strong> </h3>
+            </div>
+            <div class="modal-body">
+
+                <form id="Registration">
+
+                    <label>UserID</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="number" name="UserID" id="user_id" placeholder="UserID" />
+                        </div>
+                    </div>
+
+                    <label>User Name</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="UserName" id="user_name" placeholder="UserName" />
+                        </div>
+                    </div>
+
+                    <label>Email</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="email" name="Email" id="user_email" placeholder="Email" />
+                        </div>
+                    </div>
+
+                    <label>Your Profile Image</label><br />
+                    <input type="file" id="user_image" accept="image/png, image/jpeg" width="200" /> <br />
+                    <label>Image Preview</label><br />
+                    <img class="img-circle" id="image_preview" alt="profile image" width="100" height="100" src="~/Content/Image/img_preview.png" /><br />
+                    <br />
+
+                    <label>Password</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="password" name="Password" id="user_password" placeholder="Password" />
+                        </div>
+                    </div>
+
+                    <label>Credential</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="number" name="Credential" id="user_credential" placeholder="1/2" min="1" max="2" />
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <button class="btn btn-info form-control" type="submit" onclick="SaveForm()" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+      function SignUp() {
+          console.log("Signning up...");
+          $("#ShowModal").modal();
+      }
+
+      function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function(e){
+                  $("#image_preview").attr('src', e.target.result);
+              }
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+
+      // Image Preview
+      $("#user_image").change(function () {
+          console.log("preview working");
+          readURL(this);
+      });
+
+
+
+      // Submit Form
+      function SaveForm() {
+          console.log("Submitting form...");
+          var data = {
+              'UserID': $("#user_id").val(),
+              'UserName': $("#user_name").val(),
+              'UserEmail': $("#user_email").val(),
+              'UserImage': $("#user_image").val(),
+              'UserPassword': $("#user_password").val(),
+              'CredentialID': $("#user_credential").val()
+            };
+
+          //var data = $("#Registration").serialize();
+          $.ajax({
+              type: "post",
+              data: data,
+              url: "@Url.Action("SaveData","User")",
+              success: function (result) {
+                  alert(result);
+
+              }
+          });
+
+
+      }
+
+
+</script>

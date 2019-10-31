@@ -1,0 +1,69 @@
+﻿
+@using Joolie.Models;
+
+@{
+    Layout = null;
+}
+
+<script>
+    $('#Category').chosen();
+
+    $('#SubCategoryList').chosen();
+</script>
+
+<div style="background-image: linear-gradient(#1252e4, white); height:60px">
+    <center style="position:absolute; left:30%; top:3%">
+        <div style="display: inline-block;">
+            <form action="~/Shared/ChangeCategory" method="POST" class="CategoryForm">
+                <select id="Category" name="Category" onchange="this.form.submit()" style="width:150px">
+                    @{
+                        if (ViewData["selectedCategory"] != null)
+                        {
+                            <option style="font-weight:bold;font-size:15px;">@ViewData["selectedCategory"]</option>
+                        }
+                        else
+                        {
+                            <option id="BlankOption">Category</option>
+                        }
+
+                    }
+
+                    <option value="All Categories" id="All">All Categories</option>
+                    @{
+
+
+                        List<string> CategoryList = new List<string>();
+                        foreach (Search1 s in Model.Categories)  //
+                        {
+                            if (CategoryList.IndexOf(s.Category) == -1)
+                            {
+                                <option value="@s.Category" class="CategoryOption">@s.Category</option>
+                                CategoryList.Add(s.Category);
+                            }
+
+                        }
+                    }
+                </select>
+
+            </form>
+        </div>
+        <div style="display: inline-block">
+            <form action="~/Shared/SelectSubCategory" method="POST">
+                <select id="SubCategoryList" name="SubCategory" style="width:250px;" onchange="">
+                    @{
+                        if (ViewData["selectedCategory"] == null)
+                        {
+                            <option id="">SubCategory</option>
+                        }
+
+                        foreach (Search1 s in Model.Categories)
+                        {
+                            <option name="@s.SubCategory" value="@s.SubCategory">@s.SubCategory</option>
+                        }
+                    }
+                </select>
+                <button type="submit" onclick="this.form.submit()" style="background-color:#1252e4"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </center>
+</div>

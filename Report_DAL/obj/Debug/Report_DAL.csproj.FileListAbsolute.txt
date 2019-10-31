@@ -1,0 +1,10 @@
+C:\Users\aissa\source\repos\Joolie\Report_DAL\bin\Debug\Report_DAL.dll
+C:\Users\aissa\source\repos\Joolie\Report_DAL\bin\Debug\Report_DAL.pdb
+C:\Users\aissa\source\repos\Joolie\Report_DAL\obj\Debug\Report_DAL.csprojAssemblyReference.cache
+C:\Users\aissa\source\repos\Joolie\Report_DAL\obj\Debug\Report_DAL.dll
+C:\Users\aissa\source\repos\Joolie\Report_DAL\obj\Debug\Report_DAL.pdb
+C:\Users\aissa\source\Joolietrial\Report_DAL\bin\Debug\Report_DAL.dll
+C:\Users\aissa\source\Joolietrial\Report_DAL\bin\Debug\Report_DAL.pdb
+C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.dll
+C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.pdb
+C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.csprojAssemblyReference.cache
