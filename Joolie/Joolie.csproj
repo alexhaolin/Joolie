@@ -170,74 +170,74 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Credential.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\fanProperties.cs" />
     <Compile Include="Models\ImageHelper.cs" />
+    <Compile Include="Models\JoolieDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolieDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JoolieDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JoolieDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolieDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Manufacturer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Property.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PropertyValue.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Search.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Search1.cs" />
     <Compile Include="Models\SearchPage_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\spGetCategoryAndSubcategory_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\spGetComparedProductsDetails_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\spGetManufacturereAndImage_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SubCategory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblCategorySubCategory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TechSpecFilter.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TypeFilter.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>JoolieDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
@@ -302,24 +302,24 @@
     <Content Include="Images\Products\Fans\Haiku.jpg" />
     <Content Include="Images\Products\Haiku.jpg" />
     <Content Include="js\List.js" />
-    <Content Include="Models\Model1.Context.tt">
+    <Content Include="Models\JoolieDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>JoolieDB.edmx</DependentUpon>
+      <LastGenOutput>JoolieDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.tt">
+    <Content Include="Models\JoolieDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>JoolieDB.edmx</DependentUpon>
+      <LastGenOutput>JoolieDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
+    <EntityDeploy Include="Models\JoolieDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>JoolieDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <Content Include="Models\JoolieDB.edmx.diagram">
+      <DependentUpon>JoolieDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

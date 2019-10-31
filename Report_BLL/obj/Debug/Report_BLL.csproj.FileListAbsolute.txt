@@ -16,3 +16,13 @@ C:\Users\aissa\source\Joolietrial\Report_BLL\obj\Debug\Report_BLL.csprojAssembly
 C:\Users\aissa\source\Joolietrial\Report_BLL\obj\Debug\Report_BLL.csproj.CopyComplete
 C:\Users\aissa\source\Joolietrial\Report_BLL\obj\Debug\Report_BLL.dll
 C:\Users\aissa\source\Joolietrial\Report_BLL\obj\Debug\Report_BLL.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Report_BLL.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Report_BLL.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Report_DAL.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\bin\Debug\Report_DAL.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\obj\Debug\Report_BLL.csprojAssemblyReference.cache
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\obj\Debug\Report_BLL.csproj.CopyComplete
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\obj\Debug\Report_BLL.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_BLL\obj\Debug\Report_BLL.pdb

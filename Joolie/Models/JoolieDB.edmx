@@ -576,7 +576,7 @@ warning 6002: The table/view 'JOOLIE.dbo.tblCategorySubCategory' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="JoolieDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="JOOLIEEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Credentials" EntityType="Self.Credential" />
@@ -689,7 +689,7 @@ warning 6002: The table/view 'JOOLIE.dbo.tblCategorySubCategory' does not have a
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="JOOLIEModelStoreContainer" CdmEntityContainer="JoolieDB">
+        <EntityContainerMapping StorageEntityContainer="JOOLIEModelStoreContainer" CdmEntityContainer="JOOLIEEntities1">
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="JOOLIEModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">

@@ -8,3 +8,8 @@ C:\Users\aissa\source\Joolietrial\Report_DAL\bin\Debug\Report_DAL.pdb
 C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.dll
 C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.pdb
 C:\Users\aissa\source\Joolietrial\Report_DAL\obj\Debug\Report_DAL.csprojAssemblyReference.cache
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_DAL\bin\Debug\Report_DAL.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_DAL\bin\Debug\Report_DAL.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_DAL\obj\Debug\Report_DAL.csprojAssemblyReference.cache
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_DAL\obj\Debug\Report_DAL.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\Report_DAL\obj\Debug\Report_DAL.pdb

@@ -24,3 +24,13 @@ C:\Users\aissa\source\Joolietrial\DomainRepository\obj\Debug\DomainRepository.pd
 C:\Users\aissa\source\Joolietrial\DomainRepository\obj\Debug\DomainRepository.csprojAssemblyReference.cache
 C:\Users\aissa\source\Joolietrial\DomainRepository\bin\Debug\Report_BLL.dll
 C:\Users\aissa\source\Joolietrial\DomainRepository\bin\Debug\Report_BLL.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\DomainRepository.dll.config
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\DomainRepository.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\DomainRepository.pdb
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\EntityFramework.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\EntityFramework.xml
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\obj\Debug\DomainRepository.csproj.CopyComplete
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\obj\Debug\DomainRepository.dll
+C:\Users\xuhao\Downloads\Joolietrial\Joolie_final\DomainRepository\obj\Debug\DomainRepository.pdb

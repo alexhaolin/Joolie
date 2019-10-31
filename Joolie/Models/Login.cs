@@ -28,7 +28,7 @@ namespace Joolie.Models
         {
             System.Diagnostics.Debug.WriteLine("User: " + _username);
 
-            String connectionString = ConfigurationManager.AppSettings["UserLoginSQLConnectionString"];
+            String connectionString = ConfigurationManager.ConnectionStrings["JOOLIEEntities1"].ConnectionString;
             SqlConnection connecntion = new SqlConnection(connectionString);
             string query = @"SELECT [UserName] FROM [dbo].[User]" +
                                       @"WHERE [UserName] = @u AND [UserPassword] = @p";

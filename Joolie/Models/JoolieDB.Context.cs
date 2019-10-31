@@ -15,10 +15,10 @@ namespace Joolie.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class JoolieDB : DbContext
+    public partial class JOOLIEEntities1 : DbContext
     {
-        public JoolieDB()
-            : base("name=JoolieDB")
+        public JOOLIEEntities1()
+            : base("name=JOOLIEEntities1")
         {
         }
     

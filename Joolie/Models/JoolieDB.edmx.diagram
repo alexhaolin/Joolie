@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ee4001cc8f714d6bb109da2b58590e57" Name="Diagram1">
+      <Diagram DiagramId="35a153be19984d20a00a63019a94c52a" Name="Diagram1">
         <EntityTypeShape EntityType="JOOLIEModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JOOLIEModel.Category" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="JOOLIEModel.Credential" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />

@@ -9,7 +9,7 @@ namespace Joolie.Controllers
 {
     public class UserController : Controller
     {
-        JoolieDB db = new JoolieDB();
+        JOOLIEEntities1 db = new JOOLIEEntities1();
         public ActionResult Index()
         {
             return View();
